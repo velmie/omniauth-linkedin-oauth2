@@ -87,7 +87,7 @@ module OmniAuth
 
       def fields
         options.fields.each.with_object([]) do |field, result|
-          result << fields_mapping[field] if fields_mapping.has_key? field
+          result << ( fields_mapping.has_key?(field) ? fields_mapping[field] : field )
         end
       end
 
